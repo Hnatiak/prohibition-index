@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Зразок JSON даних
 const rulesData = {
   "1": [
     {
@@ -32,18 +31,15 @@ function App() {
   const [voice, setVoice] = useState(null);
 
   useEffect(() => {
-    // Функція для оновлення голосів
     const updateVoices = () => {
       const voices = window.speechSynthesis.getVoices();
-      console.log("Available voices:", voices); // Перевірка доступних голосів
+      console.log("Available voices:", voices);
       const maleVoice = voices.find(v => v.lang === 'en-US' && v.name.toLowerCase().includes('male'));
-      setVoice(maleVoice || voices.find(v => v.lang === 'en-US')); // Використовуємо перший доступний англійський голос, якщо чоловічий не знайдений
+      setVoice(maleVoice || voices.find(v => v.lang === 'en-US'));
     };
 
-    // Спочатку оновлюємо голоси
     updateVoices();
 
-    // Перевіряємо, чи є голоси після асинхронного завантаження
     window.speechSynthesis.onvoiceschanged = updateVoices;
   }, []);
 
@@ -53,12 +49,11 @@ function App() {
         if (ruleObj['key-words'].some(word => message.toLowerCase().includes(word))) {
           showError(ruleObj['rule']);
           speakError(ruleObj['rule']);
-          return; // Зупиняємо процес відправки повідомлення, якщо є порушення
+          return;
         }
       }
     }
 
-    // Додаємо повідомлення тільки якщо немає порушень
     const messageBox = document.getElementById("message-box");
     const newMessage = document.createElement("p");
     newMessage.textContent = message;
@@ -82,7 +77,7 @@ function App() {
       const speech = new SpeechSynthesisUtterance();
       speech.text = `Error: Rule violation! ${ruleDescription}`;
       speech.voice = voice;
-      speech.lang = 'en-US'; // Установлюємо мову на англійську
+      speech.lang = 'en-US';
       window.speechSynthesis.speak(speech);
     } else {
       console.error('No voice available for speech synthesis.');
