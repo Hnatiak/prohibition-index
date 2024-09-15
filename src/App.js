@@ -101,7 +101,7 @@ function App() {
         <div className="overlay-content">
           <p><strong>Rule Violation</strong></p>
           <p>{error}</p>
-          <button onClick={closeOverlay}>Close</button>
+          <button onClick={closeOverlay} type='submit'>Close</button>
         </div>
         </div>
       )}
