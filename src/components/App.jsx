@@ -5,7 +5,7 @@ import { MessageSending } from "../components/MessageSending/MessageSending"
 export const App = () => {
 
   return (
-    <div>
+    <div style={{ marginTop: "25px" }}>
       <MessageSending />
     </div>
   );
