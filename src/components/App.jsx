@@ -24,7 +24,7 @@ const rulesData = {
   ]
 };
 
-function App() {
+export const App = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [overlayVisible, setOverlayVisible] = useState(false);
@@ -108,5 +108,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
