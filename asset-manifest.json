@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/prohibition-index/static/css/main.a78e2b10.css",
+    "main.js": "/prohibition-index/static/js/main.b2c67300.js",
+    "index.html": "/prohibition-index/index.html",
+    "main.a78e2b10.css.map": "/prohibition-index/static/css/main.a78e2b10.css.map",
+    "main.b2c67300.js.map": "/prohibition-index/static/js/main.b2c67300.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a78e2b10.css",
+    "static/js/main.b2c67300.js"
+  ]
+}
