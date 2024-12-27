@@ -199,7 +199,7 @@ const badWords = [
 
 // Функція для створення регулярного виразу з варіаціями
 const createRegex = (word) => {
-  const escapedWord = word.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+  const escapedWord = word.replace(/([.*+?^=!:${}()|[\]\]/\\])/g, "\\$1");
   const regexString = escapedWord.split('')
     .map(char => `[${char.toLowerCase()}${char.toUpperCase()}]`)
     .join(`[\\W]*`);
